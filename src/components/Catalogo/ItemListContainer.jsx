@@ -21,7 +21,7 @@ export default function ProductsComponent() {
             setState(prev => ({ ...prev, loading: true, error: null }));
             
             try {
-                const productsData = await getProducts;
+                const productsData = await getProducts();
                 
                 if (!mounted) return;
 
@@ -81,7 +81,7 @@ export default function ProductsComponent() {
                         setState(prev => ({ ...prev, loading: true, error: null }));
                         const fetchProducts = async () => {
                             try {
-                                const productsData = await getProducts;
+                                const productsData = await getProducts();
                                 const filteredProducts = category ? 
                                     productsData.filter(product => product.category.toLowerCase() === category.toLowerCase()) :
                                     productsData;

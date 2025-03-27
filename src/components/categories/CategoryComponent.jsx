@@ -12,7 +12,7 @@ export default function CategoryComponent() {
 
     useEffect(() => {
         setLoading(true);
-        getProducts
+        getProducts()
             .then(data => {
                 const filteredProducts = data.filter(product => 
                     product.category.toLowerCase() === catName.toLowerCase()
