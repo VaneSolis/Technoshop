@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getProducts } from "../../asyncMock";
 import { useEffect, useState } from "react";
 import './CategoryComponent.css';
 
 export default function CategoryComponent() {
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

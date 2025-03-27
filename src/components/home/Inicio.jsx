@@ -46,19 +46,19 @@ const Inicio = () => {
             <section className="categories-section">
                 <h2>Categorías Destacadas</h2>
                 <div className="categories-grid">
-                    <Link to="/category/smartphones" className="category-card">
-                        <img src={smartphonesImg} alt="Smartphones" loading="lazy" />
-                        <h3>Smartphones</h3>
+                    <Link to="/category/celulares" className="category-card">
+                        <img src={smartphonesImg} alt="Celulares" loading="lazy" />
+                        <h3>Celulares</h3>
                     </Link>
                     <Link to="/category/laptops" className="category-card">
                         <img src={laptopsImg} alt="Laptops" loading="lazy" />
                         <h3>Laptops</h3>
                     </Link>
-                    <Link to="/category/tablets" className="category-card">
-                        <img src={tabletsImg} alt="Tablets" loading="lazy" />
-                        <h3>Tablets</h3>
+                    <Link to="/category/tabletas" className="category-card">
+                        <img src={tabletsImg} alt="Tabletas" loading="lazy" />
+                        <h3>Tabletas</h3>
                     </Link>
-                    <Link to="/category/accessories" className="category-card">
+                    <Link to="/category/accesorios" className="category-card">
                         <img src={accessoriesImg} alt="Accesorios" loading="lazy" />
                         <h3>Accesorios</h3>
                     </Link>
