@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../../asyncMock";
+import { getProducts } from "../../asyncMock";
 import './ItemDetailCont.css'
 import ItemCount from "./ItemCount";
-import {doc, getDoc} from "firebase/firestore";
-import { db } from "../../Firebase/Config";
 
 export default function ItemDetailContainer() {
     const {prodId} = useParams();
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        const docRef = doc(db, "productos", prodId);
-        getDoc(docRef)
-        .then((resp) => {
-            setProduct({
-                ...resp.data(),
-                id: resp.id
-            });
-        })
-        .catch((error) => {
-            console.error("Error fetching product:", error);
-        });
+        const fetchProduct = async () => {
+            const products = await getProducts;
+            const foundProduct = products.find(prod => prod.id === parseInt(prodId));
+            if (foundProduct) {
+                setProduct(foundProduct);
+            }
+        };
+        fetchProduct();
     }, [prodId])
     
     return (

@@ -1,8 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import './ItemListCont.css'
-import { useEffect, useState, useMemo } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from '../../Firebase/Config';
+import { useEffect, useState } from "react";
+import { getProducts } from "../../asyncMock";
 
 export default function ProductsComponent() {
     const navigate = useNavigate();
@@ -13,14 +12,6 @@ export default function ProductsComponent() {
         error: null
     });
 
-    // Memoizar la query de Firebase
-    const productsQuery = useMemo(() => {
-        const productsRef = collection(db, "productos");
-        return category ? 
-            query(productsRef, where("category", "==", category)) : 
-            productsRef;
-    }, [category]);
-
     useEffect(() => {
         let mounted = true;
 
@@ -30,17 +21,16 @@ export default function ProductsComponent() {
             setState(prev => ({ ...prev, loading: true, error: null }));
             
             try {
-                const snapshot = await getDocs(productsQuery);
+                const productsData = await getProducts;
                 
                 if (!mounted) return;
 
-                const productsData = snapshot.docs.map(doc => ({
-                    ...doc.data(),
-                    id: doc.id
-                }));
+                const filteredProducts = category ? 
+                    productsData.filter(product => product.category.toLowerCase() === category.toLowerCase()) :
+                    productsData;
 
                 setState({
-                    products: productsData,
+                    products: filteredProducts,
                     loading: false,
                     error: null
                 });
@@ -61,7 +51,7 @@ export default function ProductsComponent() {
         return () => {
             mounted = false;
         };
-    }, [productsQuery]);
+    }, [category]);
 
     const handleClick = (id) => {
         if (id) {
@@ -91,13 +81,12 @@ export default function ProductsComponent() {
                         setState(prev => ({ ...prev, loading: true, error: null }));
                         const fetchProducts = async () => {
                             try {
-                                const snapshot = await getDocs(productsQuery);
-                                const productsData = snapshot.docs.map(doc => ({
-                                    ...doc.data(),
-                                    id: doc.id
-                                }));
+                                const productsData = await getProducts;
+                                const filteredProducts = category ? 
+                                    productsData.filter(product => product.category.toLowerCase() === category.toLowerCase()) :
+                                    productsData;
                                 setState({
-                                    products: productsData,
+                                    products: filteredProducts,
                                     loading: false,
                                     error: null
                                 });
