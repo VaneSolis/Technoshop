@@ -1,0 +1,215 @@
+/* Reset básico para eliminar espacios no deseados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.contacto-cont {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+    margin-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.contacto-cont h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    color: #000;
+    text-align: center;
+    letter-spacing: -0.5px;
+    width: 100%;
+}
+
+.formulario {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: #f8f8f8;
+}
+
+.formulario textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: #1e90ff;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.1);
+}
+
+.formulario input[aria-invalid="true"],
+.formulario textarea[aria-invalid="true"] {
+    border-color: #dc3545;
+    background-color: #fff;
+}
+
+.formulario button.enviar {
+    background: #000;
+    color: #fff;
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    align-self: center;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.formulario button.enviar:not(:disabled):hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Eliminar los <br> del formulario */
+.formulario br {
+    display: none;
+}
+
+/* Estilos para móviles */
+@media screen and (max-width: 768px) {
+    .contacto-cont {
+        margin-top: 60px;
+        padding: 1rem;
+    }
+
+    .contacto-cont h1 {
+        font-size: 2.2rem;
+        margin: 1.5rem 0;
+    }
+
+    .formulario {
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .formulario input,
+    .formulario textarea {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .formulario textarea {
+        min-height: 150px;
+    }
+
+    .formulario button.enviar {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Estilos para tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .contacto-cont {
+        padding: 1.5rem;
+    }
+
+    .formulario {
+        width: 95%;
+        padding: 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Optimizaciones para dispositivos táctiles */
+@media (hover: none) {
+    .formulario button.enviar:active {
+        background: #333;
+        transform: translateY(-2px);
+    }
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.mensaje-exito {
+    background-color: #28a745;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.formulario button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.formulario button:disabled:hover {
+    background-color: #ccc;
+    transform: none;
+    box-shadow: none;
+}
