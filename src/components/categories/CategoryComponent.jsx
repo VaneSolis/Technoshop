@@ -11,17 +11,21 @@ export default function CategoryComponent() {
     const { catName } = useParams();
 
     useEffect(() => {
+        console.log('Categoría actual:', catName);
         setLoading(true);
         getProducts()
             .then(data => {
-                const filteredProducts = data.filter(product => 
-                    product.category.toLowerCase() === catName.toLowerCase()
-                );
+                console.log('Todos los productos:', data);
+                const filteredProducts = data.filter(product => {
+                    console.log('Comparando:', product.category.toLowerCase(), 'con', catName.toLowerCase());
+                    return product.category.toLowerCase() === catName.toLowerCase();
+                });
+                console.log('Productos filtrados:', filteredProducts);
                 setProducts(filteredProducts);
             })
             .catch(err => {
+                console.error("Error completo:", err);
                 setError("Error al cargar los productos. Por favor, intente nuevamente.");
-                console.error("Error fetching products:", err);
             })
             .finally(() => {
                 setLoading(false);
