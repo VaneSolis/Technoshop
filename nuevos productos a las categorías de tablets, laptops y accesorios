@@ -1,0 +1,5 @@
+[33mcommit 6f88d9c6ee1047e818c6568fa42d25f062d062e7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Vane Solís <vsolisperaza01@gmail.com>
+Date:   Thu Mar 27 12:13:05 2025 -0600
+
+    Corregida la forma de llamar a getProducts en los componentes

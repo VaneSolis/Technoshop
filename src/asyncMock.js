@@ -106,6 +106,60 @@ const products = [
         description: 'Teclado Magic Keyboard con teclas scissor mechanism, trackpad integrado, retroiluminación y batería de larga duración.',
         image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MK2A3?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1626460563000',
         stock: 25
+    },
+    {
+        id: 13,
+        title: 'iPad Pro 11"',
+        price: '13000',
+        category: 'tabletas',
+        description: 'iPad Pro con pantalla Liquid Retina de 11 pulgadas, chip M2, 8GB de RAM y 128GB de almacenamiento. Incluye Apple Pencil y Magic Keyboard.',
+        image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-select-wifi-spacegray-202210?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664411207664',
+        stock: 10
+    },
+    {
+        id: 14,
+        title: 'Samsung Tab S8 Ultra',
+        price: '16000',
+        category: 'tabletas',
+        description: 'Tablet Samsung con pantalla AMOLED de 14.6 pulgadas, procesador Snapdragon 8 Gen 1, 8GB de RAM y 256GB de almacenamiento. Incluye S Pen y teclado.',
+        image: 'https://images.samsung.com/is/image/samsung/p6pim/mx/2202/gallery/mx-galaxy-tab-s8-ultra-sm-x900nzaamea-530606827?$650_519_PNG$',
+        stock: 6
+    },
+    {
+        id: 15,
+        title: 'MacBook Air M2',
+        price: '20000',
+        category: 'laptops',
+        description: 'MacBook Air con chip M2, 8GB de RAM, 256GB SSD y pantalla Liquid Retina de 13.3 pulgadas. Diseño ultraligero y sin ventilador.',
+        image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-201810?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1633024684000',
+        stock: 15
+    },
+    {
+        id: 16,
+        title: 'HP Spectre x360',
+        price: '19000',
+        category: 'laptops',
+        description: 'Laptop HP Spectre x360 con procesador Intel Core i7, 16GB de RAM, 512GB SSD y pantalla táctil OLED de 13.5 pulgadas. Convertible 2 en 1.',
+        image: 'https://h10025.www1.hp.com/hubfs/Hub_Content/Homepage/Product%20Images/spectre-x360-14-2023.png',
+        stock: 8
+    },
+    {
+        id: 17,
+        title: 'AirPods Max',
+        price: '6000',
+        category: 'accesorios',
+        description: 'Audífonos inalámbricos con cancelación activa de ruido, modo Transparencia, sonido espacial y hasta 20 horas de batería.',
+        image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-silver-202009?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1604021225374',
+        stock: 12
+    },
+    {
+        id: 18,
+        title: 'Magic Mouse',
+        price: '2500',
+        category: 'accesorios',
+        description: 'Mouse Magic Mouse con superficie multitáctil, seguimiento preciso y batería de larga duración. Compatible con gestos.',
+        image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MK2E3?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1626460563000',
+        stock: 30
     }
 ];
 
