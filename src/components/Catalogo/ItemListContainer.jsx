@@ -64,7 +64,9 @@ export default function ProductsComponent() {
     }, [productsQuery]);
 
     const handleClick = (id) => {
-        if (id) navigate(`/product/${id}`);
+        if (id) {
+            navigate(`/product/${id}`, { replace: true });
+        }
     };
 
     const { products, loading, error } = state;

@@ -20,6 +20,9 @@ export default defineConfig({
     }
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
     target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari13'],
     minify: 'terser',
     cssMinify: true,
